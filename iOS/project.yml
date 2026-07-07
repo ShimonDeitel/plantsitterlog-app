@@ -1,0 +1,75 @@
+name: PlantSitterLog
+options:
+  bundleIdPrefix: com.shimondeitel.plantsitterlog
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  PlantSitterLog:
+    type: application
+    platform: iOS
+    sources:
+      - path: PlantSitterLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.plantsitterlog
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: PlantSitterLog/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  PlantSitterLogTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: PlantSitterLogTests
+      - path: PlantSitterLog.storekit
+    dependencies:
+      - target: PlantSitterLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.plantsitterlog.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  PlantSitterLogUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: PlantSitterLogUITests
+    dependencies:
+      - target: PlantSitterLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.plantsitterlog.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  PlantSitterLog:
+    build:
+      targets:
+        PlantSitterLog: all
+        PlantSitterLogTests: [test]
+        PlantSitterLogUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: PlantSitterLog.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: PlantSitterLog.storekit
+      targets:
+        - PlantSitterLogTests
+        - PlantSitterLogUITests
+    archive:
+      config: Release

@@ -1,0 +1,40 @@
+{
+  "identifier": "0",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {},
+  "subscriptionGroups": [
+    {
+      "id": "1",
+      "localizations": [],
+      "name": "PlantSitterLog Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "1.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "sub_1",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Keep watering and feeding schedules per houseplant so sitters and family know exactly what to do.",
+              "displayName": "PlantSitterLog Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "com.shimondeitel.plantsitterlog.pro.monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "PlantSitterLog Pro Monthly",
+          "subscriptionGroupID": "1",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}
